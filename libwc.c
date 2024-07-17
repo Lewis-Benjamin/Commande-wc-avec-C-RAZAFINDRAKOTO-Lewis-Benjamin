@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "libwc.h"
 
 void readFile(char* filename, char* txt) //Fonction pour lire le fichier et garde les caractères
@@ -120,19 +121,19 @@ void afficheWcDefaut(char* filename, int c, int l, int w)
 
 void afficheWc(char* filename, int c, int l, int w, int L, char* option)
 {
-	if(*option == 'm' || *option == 'c')
+	if(strcmp(option, "-m") == 0 || strcmp(option, "-c") == 0)
 	{
 		printf("%d %s\n", c, filename);
 	}
-	else if(*option == 'l')
+		else if(strcmp(option, "-l") == 0)
 	{
 		printf("%d %s\n", l, filename);
 	}
-	else if(*option == 'w')
+	else if(strcmp(option, "-w") == 0)
 	{
 		printf("%d %s\n", w, filename);
 	}
-	else if(*option == 'L')
+	else if(strcmp(option, "-L") == 0)
 	{
 		printf("%d %s\n", L, filename);
 	}
